@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+bundle exec rake heroku_sunspot:solr:start
+bundle exec rake heroku_sunspot:solr:stop
+cp config/schema.xml.example solr/configsets/sunspot/conf/schema.xml
+bundle exec rake heroku_sunspot:solr:run
